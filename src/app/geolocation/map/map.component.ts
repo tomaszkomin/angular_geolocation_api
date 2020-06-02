@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PositionService } from '../service/position.service';
+import { iMapConfig } from '../interfaces/mapConfig';
 
 @Component({
   selector: 'app-map',
@@ -8,19 +9,34 @@ import { PositionService } from '../service/position.service';
 })
 export class MapComponent implements OnInit {
 
-  public position:Position;
+  @ViewChild('mapContainer', {static: true}) mapContaineRef: ElementRef;
+
+  public map: google.maps.Map;
+  private mapConfig: iMapConfig;
+  public  position:Position;
+
   constructor( private positionService: PositionService) { }
 
   ngOnInit() {
-    this.positionService.getPositionSub().subscribe((data:Position) => {
-      console.log("DATA RECIVED FROM MAP ");
-      console.log(data);
+
+    this.mapConfig = {
+      center: new google.maps.LatLng(20, 20),
+      zoom: 15,
+      mapTypeId: "roadmap"
+    };
+
+    this.map = new google.maps.Map(this.mapContaineRef.nativeElement, this.mapConfig);
+    console.log("MAP THIS")
+    console.log(this);
+
+    this.positionService.getPositionSub().subscribe((position:Position) => {
+      this.setMap(position)
     });
   }
   public getData(){
     this.positionService.getPosition();
   }
-  public setMap(){
-
+  public setMap(position:Position){
+    console.log(position);
   }
 }

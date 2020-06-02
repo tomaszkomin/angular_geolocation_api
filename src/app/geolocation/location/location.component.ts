@@ -20,7 +20,6 @@ export class LocationComponent implements OnInit {
   ngOnInit() {
     this.position$ = this.positionService.getPositionSub();
     this.position$.subscribe( (position: iCords ) => {
-        console.log("SUBSCRIBE FROM LOCATION")
         this.permisionMSG = '';
         this.isLoading = false;
         this.setPosition(position);
@@ -32,7 +31,6 @@ export class LocationComponent implements OnInit {
     this.positionService.getPosition();
   }
   private setPosition( position: iCords ){
-    console.log("SETTING POSITION FORM LOCATION COMPONENT")
     if(position){
       const { longitude, latitude } = position.coords;
       this.lat = longitude;
