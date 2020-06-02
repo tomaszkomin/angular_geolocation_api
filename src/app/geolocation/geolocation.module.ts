@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common'
 
 import { GeolocationComponent } from './geolocation.component';
 import { MaterialModule } from './material/material.module';
+import { MapComponent } from './map/map.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
-    GeolocationComponent
+    GeolocationComponent,
+    MapComponent,
+    LocationComponent
   ],
   imports: [
     CommonModule,
