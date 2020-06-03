@@ -1,22 +1,15 @@
-<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
 <mat-card>
   <mat-card-title>
     Map Component
   </mat-card-title>
   <mat-card-content >
-    <!-- <button (click)="getData()" mat-flat-button color="primary" >Get Data</button> -->
     <div class="mapComponent" #mapRef>
       <google-map
         height = "500px"
         width = "100%"
         [center]="center">
       </google-map>
-      <!-- <map-marker
-          [position]="marker.position"
-          [label]="marker.label"
-          [title]="marker.title"
-          [options]="marker.options">
-      </map-marker> -->
     </div>
   </mat-card-content>
 </mat-card>

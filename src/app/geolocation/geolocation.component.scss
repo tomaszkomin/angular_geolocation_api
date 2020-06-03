@@ -1,3 +1,17 @@
+
+$color-red: #FF0000;
+
+.componentContainer{
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  .component{
+    margin: 1rem;
+    flex: 50%;
+    height: 100%;
+    text-align: center;
+  }
+}
 .error{
-  color:red;
+  color: $color-red;
 }
