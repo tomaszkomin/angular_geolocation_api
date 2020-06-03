@@ -1,6 +1,6 @@
 <mat-card class="location">
   <mat-card-title>
-    <h1>Geolocation</h1>
+    <h3>Geolocation Component</h3>
   </mat-card-title>
   <mat-card-content>
     <div *ngIf="!isLoading; else geoLoading" >
@@ -16,9 +16,9 @@
       <div class="location" *ngIf="lat && long">
           <h3>Your GPS Location :</h3>
             <mat-divider></mat-divider>
-            Longitude: {{long}}
+              Longitude: {{long}}
             <mat-divider></mat-divider>
-            Latitude: {{lat}}
+              Latitude: {{lat}}
       </div>
     </div>
     <ng-template #geoLoading>

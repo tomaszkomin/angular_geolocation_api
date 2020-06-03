@@ -13,7 +13,6 @@ export class PositionService {
   public getPosition(){
     navigator.geolocation.getCurrentPosition(
       ( position ) => {
-        //const {longitude, latitude} = position.coords;
         this.position$.next(position);
       }
       ,( error ) => {

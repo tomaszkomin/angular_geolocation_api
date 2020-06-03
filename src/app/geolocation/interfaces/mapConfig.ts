@@ -1,5 +1,5 @@
 export interface iMapConfig {
-  center: any,
+  center: google.maps.LatLngLiteral,
   zoom: number,
   mapTypeId: string
 };
