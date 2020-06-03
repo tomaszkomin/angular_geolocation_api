@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import { GeolocationComponent } from './geolocation.component';
 import { MaterialModule } from './material/material.module';
@@ -10,11 +11,13 @@ import { LocationComponent } from './location/location.component';
   declarations: [
     GeolocationComponent,
     MapComponent,
-    LocationComponent
+    LocationComponent,
+
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    GoogleMapsModule,
+    MaterialModule,
   ],
   exports: [
     GeolocationComponent

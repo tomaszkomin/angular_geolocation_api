@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
 import { PositionService } from '../service/position.service';
 import { iMapConfig } from '../interfaces/mapConfig';
 
@@ -11,9 +12,9 @@ export class MapComponent implements OnInit {
 
   @ViewChild('mapContainer', {static: true}) mapContaineRef: ElementRef;
 
-  public map: google.maps.Map;
+  public map: google.maps.Map
   private mapConfig: iMapConfig;
-  public  position:Position;
+  public  position: Position;
 
   constructor( private positionService: PositionService) { }
 
