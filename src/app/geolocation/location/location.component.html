@@ -1,16 +1,13 @@
 <mat-card class="location">
   <mat-card-title>
-    <h3>Geolocation Component</h3>
+    Geolocation Component
   </mat-card-title>
   <mat-card-content>
     <div *ngIf="!isLoading; else geoLoading" >
       <div *ngIf="permisionMSG">
         <h2 class="error">{{permisionMSG}}</h2>
       </div>
-      <button
-          mat-flat-button color="primary"
-         (click)="getPosition()"
-      >
+      <button mat-flat-button color="primary" (click)="getPosition()">
         Locate
       </button>
       <div class="location" *ngIf="lat && long">

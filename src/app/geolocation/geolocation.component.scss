@@ -3,12 +3,11 @@ $color-red: #FF0000;
 
 .componentContainer{
   display: flex;
-  height: 100vh;
+  flex-wrap: wrap;
   overflow: hidden;
   .component{
     margin: 1rem;
     flex: 50%;
-    height: 100%;
     text-align: center;
   }
 }
